@@ -1,15 +1,15 @@
-[![Swift](https://img.shields.io/badge/Swift-5.4-blue.svg)](https://swift.org)
+[![Swift](https://img.shields.io/badge/Swift-5.5-blue.svg)](https://swift.org)
 [![SPM compatible](https://img.shields.io/badge/SPM-Compatible-brightgreen--====.svg?style=flat)](https://swift.org/package-manager/)
 [![MIT](https://img.shields.io/badge/License-MIT-red.svg)](https://opensource.org/licenses/MIT)
 
 # SugarKit
 
-SugarKit is a declarative approach to the UIKit framework. It allows you to
+SugarKit is a declarative approach to the UIKit framework. 
 
-Declare your views in a clean and concise way like
+## View propery setter chain
 
 ```swift
-let button = UIButton(frame: .zero)
+let button: UIButton = UIButton(frame: .zero)
     .setBackgroundColor(.red)
     .setTitleColor(.white, forState: .normal)
     .setTitle("Tap me", forState: .normal)
@@ -18,36 +18,31 @@ let button = UIButton(frame: .zero)
     .setHeight(40)
     .setLayerCornerRadius(14)
     
-let label = UILabel(frame: .zero)
+let label: UILabel = UILabel(frame: .zero)
     .setText("Read me :)")
     .setFont(.systemFont(ofSize: 19))
     .setTextAlignment(.center)
     .setTextColor(.gray)
 ```
 
-Use convenient interface for working with stacks
+## Stacks
 
 ```swift
-let stack = VerticalStack {
+let stack: UIStackView = VerticalStack(spacing: 10) {
             
     UILabel(frame: .zero)
         .setText("Tap any button")
         .setFont(.systemFont(ofSize: 12))
         
-    HorizontalStack {
+    HorizontalStack(spacing: 20, distribution: .fillEqually) {
     
-        button1
+        UIButton(frame: .zero)
         
-        button2
+        UIButton(frame: .zero)
         
-        button3
+        UIButton(frame: .zero)
     
     }
-    .setSpacing(20)
-    .setAlignemnt(.center)
-    .setDistribution(.fillEqually)
             
 }
-.setSpacing(40)
-.setAlignemnt(.center)
 ```
