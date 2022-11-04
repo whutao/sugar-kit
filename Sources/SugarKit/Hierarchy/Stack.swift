@@ -36,6 +36,7 @@ public func HorizontalStack(
     frame: CGRect = .zero,
     spacing: CGFloat = .zero,
     alignment: UIStackView.Alignment = .center,
+    distribution: UIStackView.Distribution = .fill,
     @_UIViewBuilder views: () -> Array<UIView>
 ) -> UIStackView {
     
@@ -43,6 +44,7 @@ public func HorizontalStack(
     stack.axis = .horizontal
     stack.spacing = spacing
     stack.alignment = alignment
+    stack.distribution = distribution
     
     views().forEach(stack.addArrangedSubview(_:))
     
@@ -60,6 +62,7 @@ public func VerticalStack(
     frame: CGRect = .zero,
     spacing: CGFloat = .zero,
     alignment: UIStackView.Alignment = .center,
+    distribution: UIStackView.Distribution = .fill,
     @_UIViewBuilder views: () -> Array<UIView>
 ) -> UIStackView {
     
@@ -67,6 +70,7 @@ public func VerticalStack(
     stack.axis = .vertical
     stack.spacing = spacing
     stack.alignment = alignment
+    stack.distribution = distribution
     
     views().forEach(stack.addArrangedSubview(_:))
     
