@@ -306,6 +306,15 @@ extension UIView {
     
     /// Declaratively sets the propery of a view. Does **not** create a new view.
     /// - Returns: This view with modified property.
+    @discardableResult public func setLayerMaskedCorners(
+        _ maskedCorners: CACornerMask
+    ) -> Self {
+        self.layer.maskedCorners = maskedCorners
+        return self
+    }
+    
+    /// Declaratively sets the propery of a view. Does **not** create a new view.
+    /// - Returns: This view with modified property.
     @discardableResult public func setBackgroundColor(
         _ backgroundColor: UIColor?
     ) -> Self {
