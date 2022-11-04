@@ -31,7 +31,7 @@ import UIKit
 // MARK: Vertical anchor to sibling
 
 #if canImport(UIKit)
-public func pin(
+internal func _pin(
     _ sourceAnchor: _VerticalAnchor,
     to destinationAnchor: _VerticalAnchor,
     of destination: _Anchorable,
@@ -60,7 +60,7 @@ public func pin(
 // MARK: Vertical anchor to superview
 
 #if canImport(UIKit)
-public func pin(
+internal func _pin(
     _ sourceAnchor: _VerticalAnchor,
     toSuperview destinationAnchor: _VerticalAnchor,
     relation: NSLayoutConstraint.Relation = .equal,

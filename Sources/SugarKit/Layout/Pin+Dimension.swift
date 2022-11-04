@@ -31,7 +31,7 @@ import UIKit
 // MARK: Dimension anchor to sibling
 
 #if canImport(UIKit)
-public func pin(
+internal func _pin(
     _ sourceAnchor: _DimensionAnchor,
     to destinationAnchor: _DimensionAnchor,
     of destination: _Anchorable,
@@ -60,7 +60,7 @@ public func pin(
 // MARK: Dimension anchor to superview
 
 #if canImport(UIKit)
-public func pin(
+internal func _pin(
     _ sourceAnchor: _DimensionAnchor,
     toSuperview destinationAnchor: _DimensionAnchor,
     relation: NSLayoutConstraint.Relation = .equal,
@@ -87,7 +87,7 @@ public func pin(
 // MARK: Dimension anchor to constant
 
 #if canImport(UIKit)
-public func pin(
+internal func _pin(
     _ sourceAnchor: _DimensionAnchor,
     to constant: CGFloat,
     relation: NSLayoutConstraint.Relation = .equal,

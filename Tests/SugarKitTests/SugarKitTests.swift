@@ -35,32 +35,6 @@ final class StackTests: XCTestCase {
     
     func test() throws {
         
-        let container = UIView {
-            
-            VerticalStack {
-                
-                UIButton(frame: .zero)
-                
-                HorizontalStack {
-                    
-                    UIButton(frame: .zero)
-                    
-                    UIButton(frame: .zero)
-                    
-                }
-                
-            }
-            .withConstraints {
-                pin(.top, toSuperview: .top)
-                pin(.bottom, toSuperview: .bottom)
-                pin(.leading, toSuperview: .leading)
-                pinTrailing(toSuperview: .trailing)
-            }
-            
-        }
-        
-        XCTAssertEqual(container.constraints.count, 4)
-        
     }
     
 }
