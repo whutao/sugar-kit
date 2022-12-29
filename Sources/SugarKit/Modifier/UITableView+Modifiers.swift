@@ -38,7 +38,7 @@ extension UITableView {
 	
 	/// Declaratively sets the propery of a view. Does **not** create a new view.
 	/// - Returns: This view with modified property.
-	@discardableResult public func setRegistred<C: UITableViewCell>(
+	@discardableResult public func setRegistered<C: UITableViewCell>(
 		cellClass cell: C.Type
 	) -> Self {
 		register(
@@ -50,7 +50,7 @@ extension UITableView {
 	
 	/// Declaratively sets the propery of a view. Does **not** create a new view.
 	/// - Returns: This view with modified property.
-	@discardableResult public func setRegistred<C: UITableViewCell>(
+	@discardableResult public func setRegistered<C: UITableViewCell>(
 		cellFromNib cell: C.Type
 	) -> Self {
 		register(
@@ -62,7 +62,7 @@ extension UITableView {
 	
 	/// Declaratively sets the propery of a view. Does **not** create a new view.
 	/// - Returns: This view with modified property.
-	@discardableResult public func setRegistred<HF: UITableViewHeaderFooterView>(
+	@discardableResult public func setRegistered<HF: UITableViewHeaderFooterView>(
 		headerFooter: HF.Type
 	) -> Self {
 		register(
@@ -74,7 +74,7 @@ extension UITableView {
 	
 	/// Declaratively sets the propery of a view. Does **not** create a new view.
 	/// - Returns: This view with modified property.
-	@discardableResult public func setRegistred<HF: UITableViewHeaderFooterView>(
+	@discardableResult public func setRegistered<HF: UITableViewHeaderFooterView>(
 		headerFooterFromNib: HF.Type
 	) -> Self {
 		register(
