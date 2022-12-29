@@ -36,7 +36,7 @@ extension UIView {
     
     /// Custom implementation of `didMoveToWindow` method that applies pending autolayout constraints.
     @objc internal func _didMoveToWindow() {
-        if !(constraintDescriptionBag.isEmpty) {
+		if !(window == nil), !(constraintDescriptionBag.isEmpty) {
             activate(constraintDescriptionBag)
             constraintDescriptionBag = []
         }
