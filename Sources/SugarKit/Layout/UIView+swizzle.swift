@@ -34,9 +34,9 @@ import UIKit
 extension UIView {
     
     
-    /// Custom implementation of `didMoveToWindow` method that applies pending autolayout constraints.
-    @objc internal func _didMoveToWindow() {
-		if !(window == nil), !(constraintDescriptionBag.isEmpty) {
+	/// Custom implementation of `didMoveToSuperview` method that applies pending autolayout constraints.
+    @objc internal func _didMoveToSuperview() {
+		if !(constraintDescriptionBag.isEmpty) {
             activate(constraintDescriptionBag)
             constraintDescriptionBag = []
         }
@@ -45,8 +45,8 @@ extension UIView {
     /// Swizzles the `didMoveToSuperview` method implementation.
     internal static let swizzleDidMoveToSuperviewImplementation: Void = {
        
-        let aSelector: Selector = #selector(UIView.didMoveToWindow)
-        let swizzledSelector: Selector = #selector(UIView._didMoveToWindow)
+        let aSelector: Selector = #selector(UIView.didMoveToSuperview)
+        let swizzledSelector: Selector = #selector(UIView._didMoveToSuperview)
         
         let aMethod: Method? = class_getInstanceMethod(UIView.self, aSelector)
         let swizzledMethod: Method? = class_getInstanceMethod(UIView.self, swizzledSelector)
