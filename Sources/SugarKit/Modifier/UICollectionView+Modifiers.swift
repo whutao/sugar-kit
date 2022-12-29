@@ -38,7 +38,7 @@ extension UICollectionView {
 	
 	/// Registers a class for use in creating new collection view cells.
 	/// - Parameter cell: Cell class.
-	@discardableResult public func register<T: UICollectionViewCell>(
+	@discardableResult public func setRegistered<T: UICollectionViewCell>(
 		cellClass cell: T.Type
 	) -> Self {
 		register(
@@ -50,7 +50,7 @@ extension UICollectionView {
 	
 	/// Registers a class for use in creating new collection header views.
 	/// - Parameter headerClass: Header class.
-	@discardableResult public func register<T: UICollectionReusableView>(
+	@discardableResult public func setRegistered<T: UICollectionReusableView>(
 		headerClass: T.Type
 	) -> Self {
 		register(
@@ -63,7 +63,7 @@ extension UICollectionView {
 	
 	/// Registers a class for use in creating new collection footer views.
 	/// - Parameter footerClass: Footer class.
-	@discardableResult public func register<T: UICollectionReusableView>(
+	@discardableResult public func setRegistered<T: UICollectionReusableView>(
 		footerClass: T.Type
 	) -> Self {
 		register(
