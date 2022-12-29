@@ -33,6 +33,56 @@ import UIKit
 #if canImport(UIKit)
 extension UITableView {
     
+	
+	// MARK: Register
+	
+	/// Declaratively sets the propery of a view. Does **not** create a new view.
+	/// - Returns: This view with modified property.
+	@discardableResult public func setRegistred<C: UITableViewCell>(
+		cellClass cell: C.Type
+	) -> Self {
+		register(
+			C.self,
+			forCellReuseIdentifier: String(describing: C.self)
+		)
+		return self
+	}
+	
+	/// Declaratively sets the propery of a view. Does **not** create a new view.
+	/// - Returns: This view with modified property.
+	@discardableResult public func setRegistred<C: UITableViewCell>(
+		cellFromNib cell: C.Type
+	) -> Self {
+		register(
+			UINib(nibName: String(describing: C.self), bundle: nil),
+			forCellReuseIdentifier: String(describing: C.self)
+		)
+		return self
+	}
+	
+	/// Declaratively sets the propery of a view. Does **not** create a new view.
+	/// - Returns: This view with modified property.
+	@discardableResult public func setRegistred<HF: UITableViewHeaderFooterView>(
+		headerFooter: HF.Type
+	) -> Self {
+		register(
+			HF.self,
+			forHeaderFooterViewReuseIdentifier: String(describing: HF.self)
+		)
+		return self
+	}
+	
+	/// Declaratively sets the propery of a view. Does **not** create a new view.
+	/// - Returns: This view with modified property.
+	@discardableResult public func setRegistred<HF: UITableViewHeaderFooterView>(
+		headerFooterFromNib: HF.Type
+	) -> Self {
+		register(
+			UINib(nibName: String(describing: HF.self), bundle: nil),
+			forHeaderFooterViewReuseIdentifier: String(describing: HF.self)
+		)
+		return self
+	}
     
     // MARK: Delegate and data source
     
@@ -128,6 +178,17 @@ extension UITableView {
         self.estimatedSectionFooterHeight = estimatedSectionFooterHeight
         return self
     }
+	
+	// MARK: Other
+	
+	/// Declaratively sets the propery of a view. Does **not** create a new view.
+	/// - Returns: This view with modified property.
+	@discardableResult public func setSeparatorStyle(
+		_ separatorStyle: UITableViewCell.SeparatorStyle
+	) -> Self {
+		self.separatorStyle = separatorStyle
+		return self
+	}
     
 }
 #endif

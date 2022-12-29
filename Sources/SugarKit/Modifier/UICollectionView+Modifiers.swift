@@ -32,17 +32,48 @@ import UIKit
 
 #if canImport(UIKit)
 extension UICollectionView {
-    
-    
-    /// Declaratively sets the propery of a view. Does **not** create a new view.
-    /// - Returns: This view with modified property.
-    @discardableResult public func setShowsHorizontalScrollIndicator(
-        _ showsHorizontalScrollIndicator: Bool
-    ) -> Self {
-        self.showsHorizontalScrollIndicator = showsHorizontalScrollIndicator
-        return self
-    }
-    
+	
+	
+	// MARK: Register
+	
+	/// Registers a class for use in creating new collection view cells.
+	/// - Parameter cell: Cell class.
+	@discardableResult public func register<T: UICollectionViewCell>(
+		cellClass cell: T.Type
+	) -> Self {
+		register(
+			T.self,
+			forCellWithReuseIdentifier: String(describing: T.self)
+		)
+		return self
+	}
+	
+	/// Registers a class for use in creating new collection header views.
+	/// - Parameter headerClass: Header class.
+	@discardableResult public func register<T: UICollectionReusableView>(
+		headerClass: T.Type
+	) -> Self {
+		register(
+			T.self,
+			forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
+			withReuseIdentifier: String(describing: T.self)
+		)
+		return self
+	}
+	
+	/// Registers a class for use in creating new collection footer views.
+	/// - Parameter footerClass: Footer class.
+	@discardableResult public func register<T: UICollectionReusableView>(
+		footerClass: T.Type
+	) -> Self {
+		register(
+			T.self,
+			forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter,
+			withReuseIdentifier: String(describing: T.self)
+		)
+		return self
+	}
+	
     
     // MARK: Delegate and data source
     
@@ -81,6 +112,18 @@ extension UICollectionView {
         self.dragDelegate = dragDelegate
         return self
     }
+	
+	
+	// MARK: Setter methods
+	
+	/// Declaratively sets the propery of a view. Does **not** create a new view.
+	/// - Returns: This view with modified property.
+	@discardableResult public func setShowsHorizontalScrollIndicator(
+		_ showsHorizontalScrollIndicator: Bool
+	) -> Self {
+		self.showsHorizontalScrollIndicator = showsHorizontalScrollIndicator
+		return self
+	}
     
 }
 #endif
