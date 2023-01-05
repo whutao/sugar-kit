@@ -124,6 +124,15 @@ extension UICollectionView {
 		self.showsHorizontalScrollIndicator = showsHorizontalScrollIndicator
 		return self
 	}
+	
+	/// Declaratively sets the propery of a view. Does **not** create a new view.
+	/// - Returns: This view with modified property.
+	@discardableResult public func setDecelerationRate(
+		_ decelerationRate: UICollectionView.DecelerationRate
+	) -> Self {
+		self.decelerationRate = decelerationRate
+		return self
+	}
     
 }
 #endif

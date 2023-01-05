@@ -45,6 +45,51 @@ extension UIButton {
         self.setPreferredSymbolConfiguration(configuration, forImageIn: state)
         return self
     }
+	
+	/// Declaratively sets the propery of a view. Does **not** create a new view.
+	/// - Returns: This view with modified property.
+	@discardableResult public func setContentEdgeInsets(
+		_ contentEdgeInsets: UIEdgeInsets
+	) -> Self {
+		self.contentEdgeInsets = contentEdgeInsets
+		return self
+	}
+	
+	/// Declaratively sets the propery of a view. Does **not** create a new view.
+	/// - Returns: This view with modified property.
+	@discardableResult public func setContentEdgeLeadingInset(
+		_ inset: CGFloat
+	) -> Self {
+		self.contentEdgeInsets.left = inset
+		return self
+	}
+	
+	/// Declaratively sets the propery of a view. Does **not** create a new view.
+	/// - Returns: This view with modified property.
+	@discardableResult public func setContentEdgeTrailingInset(
+		_ inset: CGFloat
+	) -> Self {
+		self.contentEdgeInsets.right = inset
+		return self
+	}
+	
+	/// Declaratively sets the propery of a view. Does **not** create a new view.
+	/// - Returns: This view with modified property.
+	@discardableResult public func setContentEdgeTopInset(
+		_ inset: CGFloat
+	) -> Self {
+		self.contentEdgeInsets.top = inset
+		return self
+	}
+	
+	/// Declaratively sets the propery of a view. Does **not** create a new view.
+	/// - Returns: This view with modified property.
+	@discardableResult public func setContentEdgeBottomInset(
+		_ inset: CGFloat
+	) -> Self {
+		self.contentEdgeInsets.bottom = inset
+		return self
+	}
     
     
     // MARK: Text related
